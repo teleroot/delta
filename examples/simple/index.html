@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple DeltaJS Example</title>
+    <style>
+        .application{
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple DeltaJS Example</h1>
+    <div data-app="./control.js#Control" id="server_generated_id" class="application">
+
+        <button data-control="../examples/simple/custom-control.js" data-text-to-show="I am clicked!">Click me</button>
+        <button data-control="../examples/simple/custom-control.js" data-text-to-show="Thank You!">And me</button>
+    </div>
+
+    <script type="module">
+        import {DeltaControlLoader} from "../../src/control-loader.js";
+        let startTime = performance.now();
+        (new DeltaControlLoader()).load("#server_generated_id").then(()=>{
+            console.log("Load complete: " + (performance.now() - startTime) + " milliseconds");
+        });
+    </script>
+</body>
+</html>

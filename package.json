@@ -1,0 +1,16 @@
+{
+  "name": "delta-js",
+  "version": "1.0.0",
+  "description": "Simple javascript component library",
+  "main": "src/loader.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs": "node_modules/.bin/jsdoc src -r -d docs"
+  },
+  "author": "Dmitry Lysenko <delta.npm@gmail.com> (https://github.com/teleroot)",
+  "license": "MIT",
+  "devDependencies": {
+    "jsdoc": "^3.5.5"
+  },
+  "dependencies": {}
+}
