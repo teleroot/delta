@@ -57,7 +57,7 @@ export class Control {
     }
 
     /**
-     * Returns control index definitions. By default only {NameIndexDefinition} is included
+     * Returns control index definitions. By default only {@link module:utilities/indexes.AttributeIndexDefinition|AttributeIndexDefinition} is included
      *
      * @return {Object}
      * @see {@link module:utilities/indexes.AttributeIndexDefinition|AttributeIndexDefinition}
@@ -152,8 +152,8 @@ export class Control {
     on() {}
 
     /**
-     * Creates control indexes. Default index list contains {NameIndexDefinition} index.
-     * Indexes are objects containing DOM elements that must be accessible by a given identifier
+     * Creates control indexes from index definitions.
+     * Indexes are objects containing DOM elements that must be accessible by a given identifier.
      *
      * @returns {Object} Object with named indexes
      */
@@ -197,7 +197,7 @@ export class Control {
      * @param element {HTMLElement}
      */
     detach(element) {
-        this.loader.dettachControl(element);
+        this.loader.detachControl(element);
     }
 
     /**

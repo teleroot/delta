@@ -74,7 +74,7 @@ export class DeltaControlLoader extends DeltaLoader{
      *
      * @param element {HTMLElement}
      */
-    dettachControl(element){
+    detachControl(element){
         _controlMap.delete(element);
     }
 

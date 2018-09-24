@@ -38,6 +38,14 @@ export class DeltaLoader{
         throw "Not implemented";
     }
 
+    /**
+     * Used to resolve URL
+     * @param url {string}
+     */
+    resolve(url){
+        return url;
+    }
+
     importModule(url){
         return import(/* webpackMode: "eager" */url ).catch(err=>{
             //#DEBUG
@@ -66,7 +74,7 @@ export class DeltaLoader{
             url = element.getAttribute(this.attributeName);
         }
         const urlInfo = this.parseUrl(url);
-        const loadedModule = (await this.importModule(urlInfo.url));
+        const loadedModule = (await this.importModule(this.resolve(urlInfo.url)));
 
         /*if (!loadedModule){
             throw `Invalid module specified. URL: \"${url}\".`;
