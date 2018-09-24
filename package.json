@@ -1,6 +1,6 @@
 {
-  "name": "delta-js",
-  "version": "2.0.1",
+  "name": "delta-lib",
+  "version": "2.0.2",
   "description": "Simple javascript component library",
   "main": "src/loader.js",
   "scripts": {
