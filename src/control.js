@@ -98,6 +98,7 @@ export class Control {
         await this.render();
         await this.createChildControls();
         await this.on();
+        return this;
     }
 
     /**
