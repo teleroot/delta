@@ -282,6 +282,15 @@ export class Control {
     }
 
     /**
+     * Represents options passed to child controls in createChildControls method
+     *
+     * @return {Object}
+     */
+    get childOptions(){
+        return {parent: this};
+    }
+
+    /**
      * Returns a list of DOM elements for further loading of child controls
      *
      * @returns {HTMLElement[]} Array containing DOM elements
@@ -321,10 +330,7 @@ export class Control {
         if (!controls.length) {
             return Promise.resolve();
         }
-        const options = this.options;
-
-        if (!options.parent)
-            options.parent = this;
+        const options = this.childOptions;
 
         let loadedControls = controls.map((element) => {
             const url = element.getAttribute(this.loader.controlAttributeName);
