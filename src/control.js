@@ -56,6 +56,7 @@ export class Control {
         return this.originalContext;
     }
 
+    // noinspection JSValidateJSDoc
     /**
      * Returns control index definitions. By default only {@link module:utilities/indexes.AttributeIndexDefinition|AttributeIndexDefinition} is included
      *
@@ -101,6 +102,7 @@ export class Control {
         return this;
     }
 
+    // noinspection JSValidateJSDoc
     /**
      * Internal constructor. Do not use it directly. Use .loader.loadControl method instead.
      *
@@ -248,7 +250,15 @@ export class Control {
     shouldVisitElement(item) {
         return true;
     }
-    wrapIndexedElement(item){
+
+    /**
+     * Hook for wrapping child indexed items
+     *
+     * @param item {HTMLElement} target
+     * @param indexName {String} Name of current index
+     * @return {Object} Wrapped index element
+     */
+    wrapIndexedElement(item, indexName){
         return item;
     }
 
@@ -266,7 +276,7 @@ export class Control {
                 throw {message: "Invalid index definition. Subclass of IndexDefinition expected."}
             }
             if (definition.match(item)) {
-                this.indexes[idx][definition.id(item)] = this.wrapIndexedElement(item);
+                this.indexes[idx][definition.id(item)] = this.wrapIndexedElement(item, idx);
             }
         });
     }
